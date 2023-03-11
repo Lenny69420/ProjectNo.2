@@ -8,4 +8,5 @@ public class KillParticles : MonoBehaviour
   {
     Destroy(this.gameObject, 5f);
   }
+  
 }

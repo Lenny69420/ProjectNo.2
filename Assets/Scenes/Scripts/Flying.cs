@@ -18,7 +18,6 @@ public class Flying : MonoBehaviour
 
 // [SerializeField] private ParticleSystem Death;
 [SerializeField] private GameObject RetryMenu;
-
 private float Yaw;
 private float GiveAxis;
 private float nextFire;
@@ -29,7 +28,6 @@ void Awake ()
 }
 private void Start()
 {
-
 }
 void Update()
 {

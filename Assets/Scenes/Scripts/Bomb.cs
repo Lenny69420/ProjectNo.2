@@ -8,7 +8,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] private float Speed;
 
     // [SerializeField] GameObject particle;
-    // [SerializeField] AudioClip clip;
+    // [SerializeField] AudioClip clip
     void Update ()
     {
         rb.AddForce(rb.transform.forward * Speed);
@@ -30,5 +30,6 @@ public class Bomb : MonoBehaviour
        }
 
        Destroy(gameObject);
+       
     }
 }
