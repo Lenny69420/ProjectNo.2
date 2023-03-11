@@ -12,6 +12,7 @@ private int damage;
 public float homing_Time;
 [SerializeField] private float Speed;
 [SerializeField] private float rotaion_Speed;
+[SerializeField] private ParticleSystem Explosion;
 void Start ()
 {
     timerIsRunning = true;
@@ -56,8 +57,19 @@ public void OnTriggerEnter (Collider hitInfo)
     if (plane != null) 
     {
         plane.Die();
+        Instantiate(Explosion, transform.position, transform.rotation);
     }
     Missile missile = hitInfo.GetComponent<Missile>();
+    if (missile != null)
+    {
+        Instantiate(Explosion, transform.position, transform.rotation);
+    }
+       Bomb bomb = hitInfo.GetComponent<Bomb>();
+        if (bomb != null)
+       {
+        Instantiate(Explosion, transform.position, transform.rotation);
+       }
+
     Destroy(gameObject);
 }
 }

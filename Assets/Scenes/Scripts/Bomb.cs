@@ -6,8 +6,7 @@ public class Bomb : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
     [SerializeField] private float Speed;
-
-    // [SerializeField] GameObject particle;
+    [SerializeField] GameObject particle;
     // [SerializeField] AudioClip clip;
     void Update ()
     {
@@ -19,14 +18,14 @@ public class Bomb : MonoBehaviour
        Enemy enemy = hitInfo.GetComponent<Enemy>();
        if (enemy != null)
        {
-        // Instantiate(particle, transform.position, transform.rotation);
+        Instantiate(particle, transform.position, transform.rotation);
         enemy.DieOnCollison();
         hitInfo.attachedRigidbody.useGravity = true;
        }
        Missile missile = hitInfo.GetComponent<Missile>();
         if (missile != null)
        {
-        // Instantiate(particle, transform.position, transform.rotation);
+         Instantiate(particle, transform.position, transform.rotation);
        }
 
        Destroy(gameObject);

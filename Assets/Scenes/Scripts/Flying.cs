@@ -16,7 +16,7 @@ public class Flying : MonoBehaviour
     
 [Header("GAMEOBJECT")]
 
-// [SerializeField] private ParticleSystem Death;
+[SerializeField] private ParticleSystem Death;
 [SerializeField] private GameObject RetryMenu;
 private float Yaw;
 private float GiveAxis;
@@ -68,6 +68,7 @@ private void Shoot ()
 public void Die()
 {
     Destroy(this.gameObject);
+    Instantiate(Death,transform.position,Quaternion.identity);
     RetryMenu.SetActive(true);
 }
 }

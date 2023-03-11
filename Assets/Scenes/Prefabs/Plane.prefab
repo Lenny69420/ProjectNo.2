@@ -135,6 +135,7 @@ MonoBehaviour:
   Bullets: {fileID: 5862897449585318526, guid: 29d1019ae32f51345a92a52b0c1f0327, type: 3}
   firePoint: {fileID: 5117839125332233764}
   fireRate: 1.5
+  Death: {fileID: 99997325940704536, guid: 05d63e026bbf9ba4e8c605f90b352ecc, type: 3}
   RetryMenu: {fileID: 0}
 --- !u!1 &7548878730479432978
 GameObject:
