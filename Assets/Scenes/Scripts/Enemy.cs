@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour
        { 
         Speed = 0.25f;
         hitInfo.attachedRigidbody.useGravity = true;
-        Destroy(gameObject,3f);
+        Destroy(gameObject,4f);
        }
      }
      IEnumerator Reload()
