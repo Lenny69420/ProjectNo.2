@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     [Header("GAMEOBJECT")]
     [SerializeField] private Transform firePoint;
     [SerializeField] private Missile Missile;  
+    [SerializeField] private ParticleSystem Death;
 
     private bool timerIsRunning = false;
     private bool CanShoot;
@@ -84,13 +85,15 @@ public class Enemy : MonoBehaviour
    }
      public void OnTriggerEnter(Collider hitInfo)
      {
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-       if (enemy != null )
+       Enemy enemy = hitInfo.GetComponent<Enemy>();
+       Bomb bomb = hitInfo.GetComponent<Bomb>();
+       if (enemy != null || bomb != null)
        { 
+        Instantiate(Death,transform.position,Quaternion.identity);
         Speed = 0.25f;
         hitInfo.attachedRigidbody.useGravity = true;
         Destroy(gameObject,4f);
-       }
+       }  
      }
      IEnumerator Reload()
     {

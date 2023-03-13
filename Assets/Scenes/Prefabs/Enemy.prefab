@@ -115,6 +115,7 @@ MonoBehaviour:
   rotationSpeed: 100
   firePoint: {fileID: 8810980449632405539}
   Missile: {fileID: 6674666374803455762, guid: 527947db8ac14464ab5eb2a6038fcf7c, type: 3}
+  Death: {fileID: 99997325940704536, guid: 05d63e026bbf9ba4e8c605f90b352ecc, type: 3}
 --- !u!1 &4497464088395353376
 GameObject:
   m_ObjectHideFlags: 0

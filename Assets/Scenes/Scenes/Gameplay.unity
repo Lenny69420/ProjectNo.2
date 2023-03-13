@@ -486,7 +486,7 @@ MonoBehaviour:
   traget: {fileID: 1992512936081816045}
   enemy: {fileID: 2656922517541582572, guid: 66ba2ca68dfc0234fbe2abb5f86c798f, type: 3}
   panelTransform: {fileID: 1005848913}
-  minTime: 6
+  minTime: 7
   maxTime: 9
   depth: -62
 --- !u!1 &610677511
