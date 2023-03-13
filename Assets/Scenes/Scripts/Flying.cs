@@ -18,6 +18,7 @@ public class Flying : MonoBehaviour
 
 [SerializeField] private ParticleSystem Death;
 [SerializeField] private GameObject RetryMenu;
+[SerializeField] AudioClip clip;
 private float Yaw;
 private float GiveAxis;
 private float nextFire;
@@ -67,6 +68,7 @@ private void Shoot ()
 }
 public void Die()
 {
+    SoundManager.Instance.PlaySound(clip);
     Destroy(this.gameObject);
     Instantiate(Death,transform.position,Quaternion.identity);
     RetryMenu.SetActive(true);

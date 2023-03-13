@@ -11,5 +11,9 @@ public class GameplayBound : MonoBehaviour
     {
         fly.Die();
     }
+    if (hitInfo.gameObject.tag == "Missile")
+    {
+        Destroy(hitInfo.gameObject);
+    }
   }
 }

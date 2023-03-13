@@ -13,6 +13,7 @@ public float homing_Time;
 [SerializeField] private float Speed;
 [SerializeField] private float rotaion_Speed;
 [SerializeField] private ParticleSystem Explosion;
+[SerializeField] AudioClip clip;
 void Start ()
 {
     timerIsRunning = true;
@@ -60,16 +61,12 @@ public void OnTriggerEnter (Collider hitInfo)
         Instantiate(Explosion, transform.position, transform.rotation);
     }
     Missile missile = hitInfo.GetComponent<Missile>();
-    if (missile != null)
+    Bomb bomb = hitInfo.GetComponent<Bomb>();
+    if (missile != null || bomb != null)
     {
+        SoundManager.Instance.PlaySound(clip);
         Instantiate(Explosion, transform.position, transform.rotation);
     }
-       Bomb bomb = hitInfo.GetComponent<Bomb>();
-        if (bomb != null)
-       {
-        Instantiate(Explosion, transform.position, transform.rotation);
-       }
-
     Destroy(gameObject);
 }
 }

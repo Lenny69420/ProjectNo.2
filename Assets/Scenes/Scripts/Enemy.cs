@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private Missile Missile;  
     [SerializeField] private ParticleSystem Death;
+    [SerializeField] AudioClip collisionClip;
+    [SerializeField] AudioClip clip;
 
     private bool timerIsRunning = false;
     private bool CanShoot;
@@ -67,6 +69,7 @@ public class Enemy : MonoBehaviour
     {
         Speed = 1f;  
         Destroy(gameObject,3f);
+        SoundManager.Instance.PlaySound(collisionClip);
     }
     void Timer()
     {
@@ -89,6 +92,8 @@ public class Enemy : MonoBehaviour
        Bomb bomb = hitInfo.GetComponent<Bomb>();
        if (enemy != null || bomb != null)
        { 
+        if(bomb != null) {SoundManager.Instance.PlaySound(clip);}
+        else SoundManager.Instance.PlaySound(collisionClip);
         Instantiate(Death,transform.position,Quaternion.identity);
         Speed = 0.25f;
         hitInfo.attachedRigidbody.useGravity = true;
