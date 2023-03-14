@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI time_display;
     [SerializeField] private TextMeshProUGUI time_display_menu;
+    [SerializeField] private GameObject easterEgg;
     private GameObject player;
     private float timer;
     void Start()
@@ -21,12 +22,17 @@ public class Timer : MonoBehaviour
         {
             timer += Time.deltaTime;
             UpdateTimerDisplay((int)timer);
-            
+            ShowEasterEgg((int)timer);
         } else 
         {
             time_display.enabled = false;
             time_display_menu.enabled = true;
         }
+    }
+    public void ShowEasterEgg(int timer)
+    {
+            if (timer >= 300){easterEgg.SetActive(true);} 
+            if (timer >= 302) {easterEgg.SetActive(false);}
     }
     private void UpdateTimerDisplay(int time)
     {
